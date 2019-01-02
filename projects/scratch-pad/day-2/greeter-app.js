@@ -35,8 +35,21 @@
 
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
-    
-    
+    //Using if, else-if and else, 
+    //check the given hour of the day
+   //first check
+    if (hour >= 0 && hour <=11) { //check for morning hours using coparison operator && and
+       console.log('Good Morning!'); //log Good Morning if true
+    }
+    else if (hour >= 12 && hour <=16) { //check for afternoon hours
+        console.log('Good Afternoon!'); //log Good Afternoon if true
+    }
+  else if (hour >= 17 && hour <=21) { //check for evening hours
+        console.log('Good Evening!');  //log Good Evening if true
+    }
+     else  { //no check needed for evening hours so default response
+        console.log('Good Night!');  //log Good Night if true
+    }
     
     
     // YOUR CODE ABOVE HERE //

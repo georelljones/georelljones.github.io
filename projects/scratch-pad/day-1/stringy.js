@@ -14,9 +14,8 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
+   return string.length; //checks and returns its length
     
-
-
     // YOUR CODE ABOVE HERE //
 }
 
@@ -26,7 +25,7 @@ function length(string) {
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
 
-
+return string.toLowerCase(); //lowercases the length of this string
 
     // YOUR CODE ABOVE HERE //
 }
@@ -36,8 +35,7 @@ function toLowerCase(string) {
  */
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
-
-
+return string.toUpperCase(); //returns the uppercase of given string
 
     // YOUR CODE ABOVE HERE //
 }
@@ -57,9 +55,9 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-
-
-
+    //use replace method to replace the white spaces w/ hyphens in the new string using replace method
+   //change the string to lower case and return it
+return string.replace(/\s+/g,'-').toLowerCase(); 
     // YOUR CODE ABOVE HERE //
 }
 
@@ -77,6 +75,13 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
+
+if (string[0].toLowerCase() === char[0].toLowerCase()) {
+return true;
+}
+else {
+ return false;
+}
 
     
 
@@ -97,7 +102,14 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+    //use length method to access end char of string
+    //change both the string and the char to lower case so when comparing you are matching
+if (string[string.length-1].toLowerCase() === char.toLowerCase()) {
+return true;
+}
+else {
+ return false;
+}
 
 
     // YOUR CODE ABOVE HERE //
@@ -110,7 +122,7 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+return stringOne.concat(stringTwo);
 
 
     // YOUR CODE ABOVE HERE //
@@ -129,7 +141,9 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+    //go through each element in array until there arent anymore, need a loop
+    //join it into one string with no spaces
+return args.join('');
 
     // YOUR CODE ABOVE HERE //
 }
@@ -145,8 +159,12 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+if (stringOne.length > stringTwo.length) { //check for longest word
+return stringOne; //return the string if it passes the first test, otherwise the longest word is the second word
+}
+else {
+    return stringTwo;  //return the second string
+}
 
     // YOUR CODE ABOVE HERE //
 }
@@ -160,7 +178,15 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+//return stringOne.localeCompare(stringTwo);
+//check strings by hierarchy and return appropriate number denoting order
+if (stringOne < stringTwo) { 
+    return 1;
+}
+else if (stringOne > stringTwo){
+    return -1;
+}
+else return 0;
 
 
     // YOUR CODE ABOVE HERE //
@@ -176,8 +202,15 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+//check strings by hierarchy and return appropriate number denoting order
 
-
+if (stringOne > stringTwo) {
+    return 1;
+}
+else if (stringOne < stringTwo){
+    return -1;
+}
+else return 0;
 
 
     // YOUR CODE ABOVE HERE //

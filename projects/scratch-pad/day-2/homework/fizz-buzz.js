@@ -12,7 +12,21 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
+for (let i=1; i <= 100; i++){
+    if(i%3 === 0  &&  i%5 === 0){//check if it is a multiple of 3 and 5; check this first so it can doesnt use any of the other conditions 
+      console.log("FizzBuzz");
+    }
+    else if(i % 5 === 0){//check if it is a multiple of 5
+      console.log("Buzz"); 
+    }
+   else    if(i % 3 === 0){ //check if it is a multiple of 3
+      console.log("Fizz"); 
+    }
+    else { //other just print the number
+      console.log(i); 
 
+    }
+}
 
 
     // YOUR CODE GOES ABOVE HERE //

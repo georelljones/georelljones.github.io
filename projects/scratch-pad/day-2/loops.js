@@ -12,7 +12,11 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
+  //create for loop to run through array values
+  for (var i = 0; i < array.length; i++) { 
+    //console log the array at position i and then increment
+    console.log(array[i]); 
+  }
   
   
   
@@ -25,9 +29,14 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  //create for loop to run through array values
+  //start the index at the last index of the array
+  //test condition until its 0
+  //decrement the index
+  for (var i = array.length-1; i >= 0; i--) { 
+    //console log the array at position i and then increment
+    console.log(array[i]); 
+}
   
   // YOUR CODE ABOVE HERE //
 }
@@ -38,7 +47,11 @@ function printArrayValuesInReverse(array) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
+  //use a for in loop to print the values of an Object
+  for (var key in object) {
+    //logs the value stored in the objects key
+    console.log(object[key]); 
+  }
   
   
   
@@ -50,10 +63,9 @@ function printObjectValues(object) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
-  
+    //return array the objects keys using the Object.keys method
+   return Object.keys(object); 
+
   // YOUR CODE ABOVE HERE //
 }
 
@@ -63,7 +75,11 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
+    //use a for in loop to print the keys of an Object
+  for (var key in object) {
+    //logs the objects keys
+    console.log(key); 
+  }
   
   
   
@@ -75,9 +91,11 @@ function printObjectKeys(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  //we need the number of key/value pairs so we need to count
+  //its easiest to check in an array then we can use .length
+  //we can get an array using Object.keys method to make the object an array
+  //then check the length of that array with .length
+  return Object.keys(object).length;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -88,10 +106,17 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
-  
+
+var arr = []; //use a temp arr to store newly reversed object values
+for (let key in object){  //use for in loop to loop over the object
+arr.push(object[key]); //pust the object keys values into the new arr
+}
+for (let i = arr.length-1; i >=0; i--){ //start the console log at the end of the array
+console.log(arr[i]); //console log the values of an object in reverse using console log
+
+}
+
+
   // YOUR CODE ABOVE HERE //
 }
 

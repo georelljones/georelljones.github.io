@@ -13,10 +13,8 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+        return value => value > base;
+ 
     // YOUR CODE ABOVE HERE //
 }
 
@@ -27,7 +25,7 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+       return value => value < base;
     
     
     
@@ -41,10 +39,9 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+     return function testFunk(string){
+       return string[0].toLowerCase() === startsWith.toLowerCase();
+     }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -55,9 +52,9 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+        return function testFunk(string){
+       return string[string.length-1].toLowerCase() === endsWith.toLowerCase();
+     }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -71,10 +68,11 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    let coll = []; //need something to collect
+    for (var i = 0; i < strings.length; i++){ //use a for loop to go through the array
+        coll.push(modify(strings[i])); //after modifying the strings array at position 'i' we push it in to the collection 'coll'
+        }
+       return coll; //return the new collection
     // YOUR CODE ABOVE HERE //
 }
 
@@ -90,9 +88,13 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
-    
-    
-    
+    // //For loop to test everything and push the boolean into an array which we will test later
+    for (var i = 0; i < strings.length; i++) { //loop through the function
+    if (!test(strings[i]) ) {
+        return false;
+    } 
+    }
+     return true;
     // YOUR CODE ABOVE HERE //
 }
 
